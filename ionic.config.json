@@ -1,0 +1,12 @@
+{
+  "name": "noSnow",
+  "type": "ionic1",
+  "integrations": {},
+  "watchPatterns": [
+    "scss/**/*",
+    "www/**/*",
+    "!www/lib/**/*",
+    "!www/**/*.map"
+  ],
+  "app_id": ""
+}
