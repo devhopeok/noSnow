@@ -2,7 +2,8 @@
   "name": "noSnow",
   "type": "ionic1",
   "integrations": {
-    "gulp": {}
+    "gulp": {},
+    "cordova": {}
   },
   "watchPatterns": [
     "scss/**/*",
