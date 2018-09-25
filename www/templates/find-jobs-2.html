@@ -1,0 +1,154 @@
+<ion-view view-title="<div class='unsnow-title'>unSnow.me<img src='img/header_logo.png' class='img'></div>">
+    
+    <ion-header-bar class="bar bar-stable bar-subheader">
+        <h1 class="title">Find Jobs</h1>
+    </ion-header-bar>
+    
+    <ion-content>
+        <div class="padding unsnow-note">
+            Total Jobs Found {{ServiceFramework.jobSearchResults.length}}
+        </div>
+        
+        <div class="list card unsnow-job-item" ng-repeat="job in ServiceFramework.jobSearchResults">
+            
+            <div class="item item-divider header">
+                <div class="row">
+                    <div class="col job-id">{{job.attributes.unsnow_job_id}}</div>
+                    <div class="col col-75 job-date">
+                        <div>{{job.attributes.createdAt | date:'MMMM  dd, yyyy'}}</div>
+                        <div>{{displayZipOrMiles(job)}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                
+                <div class="row border-seperator">
+                    <div class="col col-75">
+                        
+                        <div class="row">
+                            <div class="col" ng-class="{'job-item-selected': job.attributes.drive_way, 'job-item-unselected': job.attributes.drive_way == false}">Driveway</div>
+                            <div class="col" ng-class="{'job-item-selected': job.attributes.steps, 'job-item-unselected': job.attributes.steps == false}">Steps</div>
+                        </div>
+                        <div class="row">
+                            <div class="col" ng-class="{'job-item-selected': job.attributes.walk_way, 'job-item-unselected': job.attributes.walk_way == false}">Walkway</div>
+                            <div class="col" ng-class="{'job-item-selected': job.attributes.car, 'job-item-unselected': job.attributes.car == false}">Cars</div>
+                        </div>
+                        <div class="row">
+                            <div class="col" ng-class="{'job-item-selected': job.attributes.side_walk, 'job-item-unselected': job.attributes.side_walk == false}">Sidewalk</div>
+                        </div>
+                    
+                    </div>
+                    <div class="col amount-col">
+                        <div class="amount">${{job.attributes.job_budget}}</div>
+                        <div class="job-status">{{job.attributes.job_status}}</div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col">
+                        <a class="button button-block button-dark" ng-click="$parent.viewJobDetails(job)">
+                            <i class="icon ion-document"></i>
+                            Job Details
+                        </a>
+                    </div>
+                    <div class="col colbtn">
+                        <a class="button button-block button-positive" ng-click="$parent.showBidPopup(job)" ng-disabled="$parent.userBidded(job)">
+                            <i class="icon ion-social-usd"></i>
+                            Bid Now
+                        </a>
+                    </div>
+                </div>
+                
+                <!--TODO-->
+                <p ng-show="job.attributes.winner_id != null" style="color: green; font-weight: bold"><i class="icon ion-person"></i> Hired: {{job.attributes.winner_id.attributes.first_name}} {{job.attributes.winner_id.attributes.last_name}}</p>
+            </div>
+            <!--old<div job-detail job="job" type="type"></div>-->
+        </div>
+        
+        <!--
+        <div class="list card card-grey">
+
+            <div class="item card-grey">
+                <h3><i class="icon ion-android-document"></i> Job Id: 1</h3>
+                <h3><i class="icon ion-gear-a"></i> Job Status: OPEN</h3>
+                <p><i class="icon ion-android-calendar"></i> Posted Date: August 05, 2015</p>
+                <p>You have Bidded</p>
+            </div>
+
+            <div class="item item-body">
+                <p>
+                    Address: Address Goes Here<br/>
+                    DriveWay: No<br/>
+                    Walkway: No<br/>
+                    Sideway: No<br/>
+                    Steps: No<br/>
+                    Car(s): 3
+                </p>
+                <p>
+                    <a href="#" class="subdued">Total Bids 15</a>
+                </p>
+            </div>
+
+        </div>
+        
+        <div class="list card">
+
+            <div class="item card-grey">
+                <h3><i class="icon ion-android-document"></i> Job Id: 2</h3>
+                <h3><i class="icon ion-gear-a"></i> Job Status: HIRED</h3>
+                <h3><i class="icon ion-android-contact"></i> Hired: Usman</h3>
+                <p><i class="icon ion-android-calendar"></i> Posted Date: August 05, 2015</p>
+                <p style="color: green; font-weight: bold">You are HIRED</p>
+            </div>
+
+            <div class="item item-body">
+                <p>
+                    Address: Address Goes Here<br/>
+                    DriveWay: No<br/>
+                    Walkway: No<br/>
+                    Sideway: No<br/>
+                    Steps: No<br/>
+                    Car(s): 3
+                </p>
+                <p>
+                    <a href="#" class="subdued">Total Bids 15</a>
+                </p>
+            </div>
+
+        </div>
+        
+        <div class="list card card-grey">
+
+            <div class="item card-grey">
+                <h3><i class="icon ion-android-document"></i> Job Id: 2</h3>
+                <h3><i class="icon ion-gear-a"></i> Job Status: OPEN</h3>
+                <p><i class="icon ion-android-calendar"></i> Posted Date: August 05, 2015</p>
+            </div>
+
+            <div class="item item-body">
+                <p>
+                    Address: Address Goes Here<br/>
+                    DriveWay: No<br/>
+                    Walkway: No<br/>
+                    Sideway: No<br/>
+                    Steps: No<br/>
+                    Car(s): 3
+                </p>
+                <p>
+                    <a href="#" class="subdued">Total Bids 15</a>
+                </p>
+            </div>
+
+            <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item" ng-click="showBidPopup()">
+                    <i class="icon ion-social-usd"></i>
+                    Bid Now
+                </a>
+            </div>
+
+        </div>-->
+
+    </ion-content>
+
+
+  </ion-view>

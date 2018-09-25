@@ -1,0 +1,91 @@
+<ion-view view-title="<div class='unsnow-title'>unSnow.me<img src='img/header_logo.png' class='img'></div>">
+    
+    <ion-header-bar class="bar bar-stable bar-subheader">
+        <h1 class="title">
+            Home
+        </h1>
+    </ion-header-bar>
+    
+    <ion-content scroll="false">
+        
+<!--
+        <a class="button button-block button-dark" ng-click="test()">
+                        <img src='img/my_jobs_icon.png' class='unsnow-btn-icon'>
+                        test
+                    </a>
+-->
+        <div class="unsnow-content-container unsnow-subheader-space manage-my-jobs" ng-show="home.postJob">
+            <div class="padding top-container">
+                <img src='img/unsnow-me-grey.png' class="img">
+                <div class="headline1">Welcome to unSnow.me</div>
+                <div class="headline2">Snow Removal From The Comfort of Your Home</div>
+                <div class="headline3">To get started create a new job by clicking the <span class="bold">Add Job</span> button or view information about your existing jobs by clicking the <span class="bold">My Jobs button</span></div>
+            </div>
+
+            <div class="padding bottom-buttons">
+                <div class="btn-container">
+                    <a class="button button-block button-positive" href="#/app/add-job-main">
+                        <img src='img/add_job_icon.png' class='unsnow-btn-icon'>
+                        Add Job
+                    </a>
+                </div>
+                <div class="btn-container">
+                    <a class="button button-block button-dark" href="#/app/my-jobs">
+                        <img src='img/my_jobs_icon.png' class='unsnow-btn-icon'>
+                        My Jobs
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="unsnow-content-container unsnow-subheader-space unsnow-you" ng-show="home.bidJob">
+            <div class="padding top-container">
+                <img src='img/unsnow-me-grey.png' class="img">
+                <div class="headline1">Welcome to unSnow.me</div>
+                <div class="headline2">Snow Removal From The Comfort of Your Home</div>
+                <div class="headline3">Start searching for snow removal jobs in your area by clicking the <span class="bold">Find Jobs button</span></div>
+            </div>
+
+            <div class="padding bottom-buttons">
+                <div class="btn-container">
+                    <a class="button button-block button-positive icon-left ion-search" href="#/app/find-jobs">
+                        Find Jobs
+                    </a>
+                </div>
+                <div class="btn-container">
+                    <a class="button button-block button-dark icon-left ion-android-clipboard" href="#/app/my-bids">
+                        Your Bids
+                    </a>
+                </div>
+                <div class="btn-container">
+                    <a class="button button-block button-dark icon-left ion-clipboard" href="#/app/my-awarded-bids">
+                        Your Jobs
+                    </a>
+                </div>
+            </div>
+        </div>
+<!--
+        <div class="padding home">
+            <div class="container container-unsnowme" ng-show="true" ng-show="home.postJob">
+                
+                <div class="btn-container">
+                    <a class="button button-block button-positive" href="#/app/unsnow-me">
+                        unSnow Me
+                    </a>
+                </div>
+            </div>
+            <div class="container" ng-class="{'container-unsnowyou': true}" ng-show="home.bidJob">
+                
+                <div class="btn-container">
+                    <a class="button button-block button-dark" href="#/app/unsnow-you">
+                        unSnow You
+                    </a>
+                </div>
+            </div>
+        </div>
+-->
+
+    </ion-content>
+
+
+  </ion-view>

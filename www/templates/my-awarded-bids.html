@@ -1,0 +1,108 @@
+<ion-view view-title="<div class='unsnow-title'>unSnow.me<img src='img/header_logo.png' class='img'></div>">
+    
+    <ion-header-bar class="bar bar-stable bar-subheader">
+        <h1 class="title">Your Jobs</h1>
+    </ion-header-bar>
+    
+    <ion-content class="my-bids">
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>
+        
+        <div class="list">
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    SHOW JOBS
+                </div>
+                <select ng-model="search.attributes.job_id.attributes.job_status">
+                    <option value="">ALL ({{result.length}})</option>
+                    <option value="AWARDED">AWARDED ({{countRecords('AWARDED')}})</option>
+                    <option value="CLOSED">CLOSED ({{countRecords('CLOSED')}})</option>
+                </select>
+            </label>
+        </div>
+        
+        <div class="padding unsnow-note" ng-show="result.length == 0" style="text-align: center">
+            You have not been awarded any job.
+        </div>
+        
+        
+        <div class="list card unsnow-job-item" ng-repeat="bid in result | filter:search">
+            
+            <div class="item item-divider header">
+                <div class="row">
+                    <div class="col job-id">{{bid.attributes.job_id.attributes.unsnow_job_id}}</div>
+                    <div class="col col-75 job-date">
+                        
+                        <div>{{bid.attributes.job_id.attributes.createdAt | date:'MMMM  dd, yyyy'}}</div>
+                        <div>{{bid.attributes.job_id.attributes.city}}, {{bid.attributes.job_id.attributes.state}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                
+                <div class="row border-seperator">
+                    <div class="col col-75">
+                        
+                        <div class="row">
+                            <div class="col col1">Bid Status</div>
+                            <div class="col col2">{{bid.attributes.bid_status}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col col1">Bid Amount</div>
+                            <div class="col col2">${{bid.attributes.bid_amount}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col col1">Bid Date</div>
+                            <div class="col col2">{{bid.attributes.createdAt | date:'MMMM  dd, yyyy'}}</div>
+                        </div>
+                    
+                    </div>
+                    <div class="col amount-col">
+                        <div class="amount">${{bid.attributes.job_id.attributes.job_budget}}</div>
+                        <div class="job-status">{{bid.attributes.job_id.attributes.job_status}}</div>
+                    </div>
+                </div>
+                <div class="row border-seperator">
+                    <div class="col job-status awarded" style="padding-top: 15px; padding-bottom: 10px">
+                        <span style="color: #4083b6" class="bold">Address : </span>
+                        <br/>
+                        <span class="normal">
+                             {{bid.attributes.job_id.attributes.address}}, {{bid.attributes.job_id.attributes.city}}, {{bid.attributes.job_id.attributes.state}}, {{bid.attributes.job_id.attributes.zip}}
+                        </span>
+                        <br/>
+                        
+                        
+                        <span style="color: #4083b6" class="bold">Awarded Date : </span>
+                        <br/>
+                        
+                        <span class="normal">
+                            {{bid.attributes.updatedAt | date:'MMMM  dd, yyyy hh:mm a'}}
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col">
+                        <a class="button button-block button-dark" ng-click="$parent.viewJobDetails(bid.attributes.job_id)">
+                            <i class="icon ion-document"></i>
+                            Job Details
+                        </a>
+                    </div>
+                </div>
+                <div class="row" ng-show="showRating(bid)">
+                    <div class="col">
+                        <a class="button button-block button-positive" ng-click="showRatingDialog(bid.id, bid.attributes.job_id.id)">
+                            <i class="icon ion-star"></i>
+                            Rate User
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+
+    </ion-content>
+
+
+  </ion-view>

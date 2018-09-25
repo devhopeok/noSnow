@@ -1,0 +1,73 @@
+ <div class="list">
+     
+     <div ng-show="ratingError" class="unsnow-note" style="padding-left: 10px; padding-bottom: 10px; color: red;">
+         All fields are required
+     </div>
+     
+     <ionic-ratings ratingsobj='ratingsObj'></ionic-ratings>
+     
+     <label class="item item-input item-select">
+        <div class="input-label">
+            Job Completed
+        </div>
+        <select ng-model="rating.jobCompletedStatus">
+            <option value="">Select</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+     </label>
+     
+     <label class="item item-input item-select">
+        <div class="input-label">
+            Work With Again
+        </div>
+        <select ng-model="rating.workWithAgain">
+            <option value="">Select</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="May be">May be</option>
+        </select>
+    </label>
+     
+    <label class="item item-input item-select">
+        <div class="input-label">
+            Punctuality
+        </div>
+        <select ng-model="rating.punctuality">
+            <option value="">Select</option>
+            <option value="Early">Early</option>
+            <option value="On Time">On Time</option>
+            <option value="Late">Late</option>
+            <option value="Very Late">Very Late</option>
+            <option value="Never Showed">Never Showed</option>
+        </select>
+    </label>
+     
+    <label class="item item-input item-select">
+        <div class="input-label">
+            Communication
+        </div>
+        <select ng-model="rating.communication">
+            <option value="">Select</option>
+            <option value="Great">Great</option>
+            <option value="Ok">Ok</option>
+            <option value="Bad">Bad</option>
+            <option value="Not Needed">Not Needed</option>
+        </select>
+    </label>
+    
+     <label class="item item-input item-select">
+        <div class="input-label">
+            Payment
+        </div>
+        <select ng-model="rating.payment">
+            <option value="">Select</option>
+            <option value="As Agreed">As Agreed</option>
+            <option value="Compromised">Compromised</option>
+            <option value="Negotiated">Negotiated</option>
+            <option value="Issues">Issues</option>
+            <option value="Major Problems">Major Problems</option>
+        </select>
+    </label>
+
+</div>

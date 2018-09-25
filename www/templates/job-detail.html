@@ -1,0 +1,195 @@
+<ion-view view-title="<div class='unsnow-title'>unSnow.me<img src='img/header_logo.png' class='img'></div>">
+    
+    <ion-header-bar class="bar bar-stable bar-subheader">
+        <h1 class="title">Job Details</h1>
+    </ion-header-bar>
+    
+    <ion-content>
+        
+        <!--Jobs-->
+        <div class="list card unsnow-job-item job-detail">
+            <div class="item item-divider header">
+                <div class="row">
+                    <div class="col job-id">{{job.attributes.unsnow_job_id}}</div>
+                    <div class="col col-75 job-date">
+                        <div>{{job.attributes.createdAt | date:'MMMM  dd, yyyy'}}</div>
+                        <div>{{job.attributes.city}}, {{job.attributes.state}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                
+                <div class="row border-seperator" style="padding-bottom: 10px;" ng-show="$parent.isOwner(job) || $parent.isWinner(job)">
+                    <div class="col item-grey">
+                        <span style="color: #000000; white-space: normal;">Selected Address:</span> {{job.attributes.address}}, {{job.attributes.city}}, {{job.attributes.state}}, {{job.attributes.zip}}
+                    </div>
+                </div>
+                
+                <div class="row border-seperator" style="padding-bottom: 10px; padding-top: 10px;">
+                    <div class="col item-grey">
+                        <span style="color: #000000">Desired Completion:</span><br/>
+                        {{job.attributes.complete_date | date:'MMMM  dd, yyyy'}} by 
+                        {{job.attributes.complete_date | date:'hh:mm a'}}
+                    </div>
+                </div>
+                
+                <div class="row border-seperator">
+                    <div class="col col-75">
+                        <div class="row">
+                            <div class="col item-grey" style="color: #000000; padding-top: 10px;">unSnow:</div>
+                        </div>
+                        
+                        <div class="row row-grey-border-right">
+                            <div class="col col-50 item-black-small"></div>
+                            <div class="col col-25 item-black-small">Width</div>
+                            <div class="col col-25 item-black-small">Length</div>
+                        </div>
+                        
+                        <div class="row row-grey row-grey-border-right">
+                            <div class="col col-50 item-grey">Driveway</div>
+                            <div class="col col-25 item-grey">{{job.attributes.drive_way_length}}<span ng-show="job.attributes.drive_way_length != undefined">ft</span></div>
+                            <div class="col col-25 item-grey">{{job.attributes.drive_way_width}}<span ng-show="job.attributes.drive_way_width != undefined">ft</span></div>
+                        </div>
+                        <div class="row row-grey-border-right">
+                            <div class="col col-50 item-grey">Walkway</div>
+                            <div class="col col-25 item-grey">{{job.attributes.walk_way_length}}<span ng-show="job.attributes.walk_way_length != undefined">ft</span></div>
+                            <div class="col col-25 item-grey">{{job.attributes.walk_way_width}}<span ng-show="job.attributes.walk_way_width != undefined">ft</span></div>
+                        </div>
+                        <div class="row row-grey row-grey-border-right">
+                            <div class="col col-50 item-grey">Sidewalk</div>
+                            <div class="col col-25 item-grey">{{job.attributes.side_walk_length}}<span ng-show="job.attributes.side_walk_length != undefined">ft</span></div>
+                            <div class="col col-25 item-grey">{{job.attributes.side_walk_width}}<span ng-show="job.attributes.side_walk_width != undefined">ft</span></div>
+                        </div>
+                        <div class="row row-grey-border-right">
+                            <div class="col col-50 item-grey">Steps ({{job.attributes.steps_amount}})</div>
+                            <div class="col col-25 item-grey">{{job.attributes.steps_width}}<span ng-show="job.attributes.steps_width != undefined">ft</span></div>
+                            <div class="col col-25 item-grey"></div>
+                        </div>
+                        <div class="row row-grey row-grey-border-right">
+                            <div class="col col-50 item-grey">Cars ({{job.attributes.carsList.length}})</div>
+                            <div class="col col-25 item-grey"></div>
+                            <div class="col col-25 item-grey"></div>
+                        </div>
+                        <div class="row row-grey-border-right" style="height: 10px">
+                            <div class="col col-50"></div>
+                            <div class="col col-25"></div>
+                            <div class="col col-25"></div>
+                        </div>
+                    
+                    </div>
+                    <div class="col amount-col" style="margin-top: auto; margin-bottom: auto;">
+                        <div class="amount">${{job.attributes.job_budget}}</div>
+                        <div class="job-status">{{job.attributes.job_status}}</div>
+                    </div>
+                </div>
+                
+                <div class="car border-seperator" ng-show="job.attributes.car">
+                    
+                    <div class="row">
+                        <div class="col item-grey" style="color: #000000; padding-top: 10px;">Vehicle Info:</div>
+                    </div>
+                    
+                    <div class="row black">
+                        <div class="col col-20" style="padding-left: 0px">
+                            Location
+                        </div>
+                        <div class="col col-20">
+                            Plate
+                        </div>
+                        <div class="col col-20">
+                             Type
+                        </div>
+                        <div class="col col-20">
+                             Color
+                        </div>
+                        <div class="col col-20">
+                             Digout
+                        </div>
+                    </div>
+                    
+                    <div class="row grey" ng-repeat="car in job.attributes.carsList track by $index">
+
+                        <div class="col col-20"  style="padding-left: 0px">
+                            {{car.attributes.car_location}}
+                        </div>
+                        <div class="col col-20">
+                            {{car.attributes.license_plate}}
+                        </div>
+                        <div class="col col-20">
+                            {{car.attributes.car_type}}
+                        </div>
+                        <div class="col col-20">
+                            {{car.attributes.car_color}}
+                        </div>
+                        <div class="col col-20">
+                            {{showYesNo(car.attributes.digout)}}
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div class="row border-seperator" ng-show="showAwarded(job)">
+                    <div class="col job-status" style="padding-top: 15px; padding-bottom: 10px">
+                        <span style="color: #4083b6">Awarded To : </span>{{job.attributes.winner_id.attributes.first_name}} {{job.attributes.winner_id.attributes.last_name}}
+                        <br/>
+                        <span style="color: #4083b6">Awarded Date : </span>{{job.attributes.updatedAt | date:'MMMM  dd, yyyy hh:mm a'}}
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col">
+                        <a class="button button-block button-dark" ng-click="viewBids(job)" ng-show="$parent.isOwner(job) && job.attributes.job_status == 'OPEN'">
+                            <i class="icon ion-social-usd"></i>
+                            View Bids ({{bidCount}})
+                        </a>
+                        <a class="button button-block button-positive" ng-click="cancelJob(job)" ng-show="$parent.isOwner(job) && job.attributes.job_status == 'OPEN'">
+                            <i class="icon ion-close-circled"></i>
+                            Cancel Job
+                        </a>
+<!--
+                        <a class="button button-block button-dark" ng-click="showRatingDialog(job)" ng-show="$parent.isOwner(job) && job.attributes.job_status == 'AWARDED'">
+                            <i class="icon ion-star"></i>
+                            Rate User
+                        </a>
+-->
+                        
+                        <a class="button button-block button-dark" ng-click="$parent.showBidPopup(job)" 
+                           ng-show="$parent.isOwner(job) == false && $parent.userNotBidded(job) && job.attributes.job_status == 'OPEN'">
+                            <i class="icon ion-social-usd"></i>
+                            Bid
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="list card unsnow-job-item job-detail">
+            <div class="item item-divider header">
+                <div class="row">
+                    <div class="col job-id">User Rating</div>
+                    <div class="col col-75 job-id">
+                        <div class="rem-bottom-padding-rating"><ionic-ratings ratingsobj='userRatingsObj'></ionic-ratings></div>
+                        <div></div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="item" ng-repeat="rating in resultUserRating | filter:search">
+                <div style="width: 40%; float: left">
+                    {{rating.attributes.createdAt | date:'MMMM  dd, yyyy'}}
+                </div>
+                <div style="width: 60%; float: left" class="rem-bottom-padding-rating">
+                    <ionic-ratings ratingsobj='rating.fiveStarObj'></ionic-ratings>
+                </div>
+            </div>
+            
+           
+        </div>
+
+    </ion-content>
+
+
+  </ion-view>

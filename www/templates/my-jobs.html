@@ -1,0 +1,137 @@
+<ion-view view-title="<div class='unsnow-title'>unSnow.me<img src='img/header_logo.png' class='img'></div>">
+    
+    <ion-header-bar class="bar bar-stable bar-subheader">
+        <h1 class="title">Your Jobs</h1>
+    </ion-header-bar>
+    
+    <ion-nav-buttons side="right">
+        <a class="button button-icon icon ion-plus-circled" href="#/app/add-job/0"></a>
+    </ion-nav-buttons>
+    
+    <ion-content>
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>
+        
+        <div class="padding unsnow-note" ng-show="result.length == 0" style="text-align: center">
+            You Have Not Posted a Job Yet 
+        </div>
+        
+        <div class="list">
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    SHOW JOBS
+                </div>
+                <select ng-model="search.attributes.job_status">
+                    <option value="">ALL ({{result.length}})</option>
+                    <option value="OPEN">OPEN ({{countRecords('OPEN')}})</option>
+                    <option value="AWARDED">AWARDED ({{countRecords('AWARDED')}})</option>
+                    <option value="CANCELLED">CANCELLED ({{countRecords('CANCELLED')}})</option>
+                    <option value="CLOSED">CLOSED ({{countRecords('CLOSED')}})</option>
+                    <option value="COMPLETED">COMPLETED ({{countRecords('COMPLETED')}})</option>
+                </select>
+            </label>
+        </div>
+        
+        <div class="list card unsnow-job-item" ng-repeat="job in result | filter:search">
+            <div class="item item-divider header">
+                <div class="row">
+                    <div class="col job-id">{{job.attributes.unsnow_job_id}}</div>
+                    <div class="col col-75 job-date">
+                        <div>{{job.attributes.createdAt | date:'MMMM  dd, yyyy'}}</div>
+                        <div>{{job.attributes.city}}, {{job.attributes.state}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                
+                <div class="row border-seperator">
+                    <div class="col col-75">
+                        
+                        <div class="row">
+                            <div class="col" ng-class="{'job-item-selected': job.attributes.drive_way, 'job-item-unselected': job.attributes.drive_way == false}">Driveway</div>
+                            <div class="col" ng-class="{'job-item-selected': job.attributes.steps, 'job-item-unselected': job.attributes.steps == false}">Steps</div>
+                        </div>
+                        <div class="row">
+                            <div class="col" ng-class="{'job-item-selected': job.attributes.walk_way, 'job-item-unselected': job.attributes.walk_way == false}">Walkway</div>
+                            <div class="col" ng-class="{'job-item-selected': job.attributes.car, 'job-item-unselected': job.attributes.car == false}">Cars</div>
+                        </div>
+                        <div class="row">
+                            <div class="col" ng-class="{'job-item-selected': job.attributes.side_walk, 'job-item-unselected': job.attributes.side_walk == false}">Sidewalk</div>
+                        </div>
+                    
+                    </div>
+                    <div class="col amount-col">
+                        <div class="amount">${{job.attributes.job_budget}}</div>
+                        <div class="job-status">{{job.attributes.job_status}}</div>
+                    </div>
+                </div>
+                
+                <div class="row border-seperator" ng-show="showAwarded(job)">
+                    <div class="col job-status awarded" style="padding-top: 15px; padding-bottom: 10px">
+                        <span style="color: #4083b6" class="bold">Awarded to : </span>
+                        <br/>
+                        <span class="normal">
+                            {{job.attributes.winner_id.attributes.first_name}} {{job.attributes.winner_id.attributes.last_name}}
+                        </span>
+                        <br/>
+                        <span style="color: #4083b6" class="bold">Awarded Date : </span>
+                        <br/>
+                        <span class="normal">{{job.attributes.updatedAt | date:'MMMM  dd, yyyy hh:mm a'}}</span>
+                        
+                        <span ng-show="job.attributes.job_status == 'COMPLETED'">
+                            <br/>
+                            <span style="color: #4083b6" class="bold">Completed Date : </span>
+                            <br/>
+                            <span class="normal">{{job.attributes.updatedAt | date:'MMMM  dd, yyyy hh:mm a'}}</span>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col">
+                        <a class="button button-block button-dark" ng-click="$parent.viewJobDetails(job)">
+                            <i class="icon ion-document"></i>
+                            Job Details
+                        </a>
+                    </div>
+                    <div class="col colbtn" ng-show="job.attributes.job_status != 'CANCELLED'">
+                        <a class="button button-block button-positive" ng-click="$parent.viewBids(job)" ng-show="toShowViewBids(job)">
+                            <i class="icon ion-social-usd"></i>
+                            View Bids
+                        </a>
+                        <a class="button button-block button-dark" ng-click="cancelJob(job)" ng-show="job.attributes.job_status == 'AWARDED'">
+                            <i class="icon ion-trash-b"></i>
+                            Cancel Job
+                        </a>
+                    </div>
+                </div>
+                <div class="row" ng-show="job.attributes.job_status == 'AWARDED'">
+                    <div class="col">
+                        <a class="button button-block button-positive" ng-click="showRatingDialog(job)" ng-show="job.attributes.job_status == 'AWARDED'">
+                            <i class="icon ion-star"></i>
+                            Rate User
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!--
+            <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item" ng-click="$parent.viewJobDetails(job)">
+                  <i class="icon ion-android-document"></i>
+                    View Job Details
+                </a>
+
+                <a class="tab-item" ng-click="$parent.viewBids(job)">
+                    <i class="icon ion-social-usd"></i>
+                    View Bids
+                </a>
+            </div>
+            -->
+        </div>
+        
+
+    </ion-content>
+
+
+  </ion-view>

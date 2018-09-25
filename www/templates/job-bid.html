@@ -1,0 +1,47 @@
+ <div class="list">
+    <div ng-show="bidError" class="unsnow-note" style="padding-left: 10px; padding-bottom: 10px; color: red;">All fields are required</div>        
+    <label class="item item-input item-select">
+        <div class="input-label">
+            Price
+        </div>
+        <select ng-model="bid.amount" ng-options="item as concatUSD(item) for item in $parent.serviceAddJob.count1000">
+        </select>
+    </label>
+     
+    <label class="item item-input">
+        <input id="dd" type="date" ng-class='{"not_empty":$parent.remClass==1}' ng-change='$parent.removeClass(bid.completedBy)' ng-model="bid.completedBy" placeholder="Completed By">
+    </label>
+    
+     <label class="item item-input">
+         <ionic-timepicker input-obj="timePickerObject">
+             <input type="text" ng-model="bid.bidCompletedByTime" placeholder="Completed By Time">
+         </ionic-timepicker>
+     </label>
+     
+    <label class="item item-input item-select">
+        <div class="input-label">
+            Method
+        </div>
+        <select ng-model="bid.method">
+            <option value="">Select</option>
+            <option value="Shovel">Shovel</option>
+            <option value="Plow">Plow</option>
+            <option value="Shovel and Plow">Shovel and Plow</option>
+            <option value="Snow Blower">Snow Blower</option>
+            <option value="Snow Blower and Shovel">Snow Blower and Shovel</option>
+            <option value="Blower, Shovel and Plow">Blower, Shovel and Plow</option>
+
+        </select>
+    </label>
+     
+    <label class="item item-input item-select">
+        <div class="input-label">
+            Car Move Required
+        </div>
+        <select ng-model="bid.carMoveRequired">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+    </label>
+
+</div>

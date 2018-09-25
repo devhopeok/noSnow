@@ -1,0 +1,57 @@
+<ion-view view-title="UnSnow.me" class="login">
+    
+    <ion-content>
+        
+        <div class="login-top" style="{{login.height}}" ng-if="true">
+            <img src="img/unsnow_login_logo.png" style="width: 80%;"/>
+        </div>
+        
+        <div class="main" ng-if="true">
+            
+            
+
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <i class="icon placeholder-icon ion-android-contact"></i>
+                    <input type="email" placeholder="Email" ng-model="user.email" class="text-field">
+                </label>
+                <label class="item item-input">
+                    <i class="icon placeholder-icon ion-locked"></i>
+                    <input type="password" placeholder="Password" ng-model="user.password" class="text-field">
+                </label>
+            </div>
+            <div class="padding forgot-password">
+                <span style="display: block"><a href="#/forgot-password">Forgot Password?</a></span>
+            </div>
+            
+
+            <div class="padding">
+                <a class="button button-block button-dark " ng-click="login()">
+                    LOGIN
+                </a>
+            </div>
+            
+            <div class="row">
+                <div class="col">
+                    <button class="button button-block button-positive icon ion-social-facebook transparent-btn" ng-click="loginFB()"></button>
+                </div>
+                
+                <div class="col">
+                    <a class="button button-block button-positive transparent-btn" ng-click="register()">
+                        SIGN UP
+                    </a>
+                </div>
+            </div>
+
+<!--
+            <div class="padding forgot-password-link link" style="text-align: center">
+                <span style="display: block"><a href="#/forgot-password">Forgot Password?</a></span>
+                <span style="display: block"><a href="#/register">Not Registered? Signup Now</a></span>
+            </div>
+-->
+        </div>
+
+    </ion-content>
+
+
+  </ion-view>

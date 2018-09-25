@@ -1,1 +1,1204 @@
 /* Empty. Add your own CSS if you like */
+
+
+@font-face {
+  font-family: 'Lato-Regular';
+  src: url('fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'),  url('fonts/Lato-Regular.woff') format('woff'), url('fonts/Lato-Regular.ttf')  format('truetype'), url('fonts/Lato-Regular.svg#Lato-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat-Light';
+  src: url('fonts/Montserrat-Light/Montserrat-Light.eot?#iefix') format('embedded-opentype'),  url('fonts/Montserrat-Light/Montserrat-Light.otf')  format('opentype'),
+	     url('fonts/Montserrat-Light/Montserrat-Light.woff') format('woff'), url('fonts/Montserrat-Light/Montserrat-Light.ttf')  format('truetype'), url('fonts/Montserrat-Light/Montserrat-Light.svg#Montserrat-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url('fonts/Montserrat-Regular/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),  url('fonts/Montserrat-Regular/Montserrat-Regular.otf')  format('opentype'),
+	     url('fonts/Montserrat-Regular/Montserrat-Regular.woff') format('woff'), url('fonts/Montserrat-Regular/Montserrat-Regular.ttf')  format('truetype'), url('fonts/Montserrat-Regular/Montserrat-Regular.svg#Montserrat-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Montserrat-SemiBold';
+  src: url('fonts/Montserrat-SemiBold/Montserrat-SemiBold.eot?#iefix') format('embedded-opentype'),  url('fonts/Montserrat-SemiBold/Montserrat-SemiBold.otf')  format('opentype'),
+	     url('fonts/Montserrat-SemiBold/Montserrat-SemiBold.woff') format('woff'), url('fonts/Montserrat-SemiBold/Montserrat-SemiBold.ttf')  format('truetype'), url('fonts/Montserrat-SemiBold/Montserrat-SemiBold.svg#Montserrat-SemiBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Lato-Bold';
+  src: url('fonts/Lato-Bold/Lato-Bold.eot?#iefix') format('embedded-opentype'),  url('fonts/Lato-Bold/Lato-Bold.woff') format('woff'), url('fonts/Lato-Bold/Lato-Bold.ttf')  format('truetype'), url('fonts/Lato-Bold/Lato-Bold.svg#Lato-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.unsnow-title
+{
+    font-family: 'Montserrat-Regular';
+    font-size: 18px;
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+    color: #ffffff;
+}
+
+.unsnow-title .img
+{
+    height: 65%;
+    width: auto;
+    vertical-align: text-bottom;
+}
+
+.unsnow-btn-icon
+{
+    height: 24px;
+    background-size: contain;
+    left: 10px;
+    position: absolute;
+    margin-top: 10px;
+}
+
+.unsnow-note
+{
+    font-family: 'Lato-Regular';
+    color: #585858;
+}
+
+.unsnow-job-item
+{
+
+}
+
+.unsnow-job-item
+{
+    margin: 10px 0px;
+    border-radius: 0;
+}
+
+.unsnow-job-item .item
+{
+    background-color: #ffffff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.unsnow-job-item .item .row
+{
+    padding: 0;
+}
+
+.unsnow-job-item .item .row .col
+{
+    padding: 0;
+}
+
+.unsnow-job-item .item .row .colbtn
+{
+    padding-left: 10px;
+}
+
+.unsnow-job-item .header
+{
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+.unsnow-job-item .item .row .job-id
+{
+    font-family: 'Montserrat-SemiBold';
+    color: #000;
+    font-size: 16px;
+    margin: auto;
+}
+
+.unsnow-job-item .item .row .job-date
+{
+    font-family: 'Lato-Regular';
+    color: #898989;
+    font-size: 12px;
+    text-align: right;
+}
+
+.unsnow-job-item .item .row .job-date div
+{
+    line-height: 14px;
+}
+
+.unsnow-job-item .amount-col
+{
+    text-align: right;
+}
+
+.unsnow-job-item .amount
+{
+    font-family: 'Montserrat-Regular';
+    color: #46494f;
+    font-size: 36px;
+    line-height: 36px;
+}
+
+.unsnow-job-item .job-status
+{
+    font-family: 'Montserrat-SemiBold';
+    color: #24b5c6;
+    font-size: 15px;
+    padding-top: 10px;
+}
+
+.unsnow-job-item .job-item-selected
+{
+    background: url("../img/job-item-selected.png") no-repeat center;
+    background-size: 24px;
+    background-position: left;
+    padding-left: 30px !important;
+    margin-bottom: 10px !important;
+    margin-left: -3px;
+    color: #4083b6 !important;
+    font-family: 'Montserrat-Regular';
+}
+
+.unsnow-job-item .job-item-unselected
+{
+    background: url("../img/job-item-unselected.png") no-repeat center;
+    background-size: 24px;
+    color: #898989;
+    font-family: 'Montserrat-Regular';
+    background-position: left;
+    padding-left: 30px !important;
+    margin-bottom: 10px !important;
+    margin-left: -3px;
+}
+
+.unsnow-job-item .border-seperator
+{
+    border-bottom-color: #ddd;
+    border-bottom-width: 1px !important;
+    border-bottom-style: solid;
+}
+
+.unsnow-job-item .button
+{
+    width: 100%;
+    height: 37px;
+    min-height: 37px;
+    text-transform: none !important;
+    line-height: 35px !important;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.unsnow-job-item .button .icon
+{
+    left: 10px;
+    position: absolute;
+}
+
+.unsnow-job-item .button .icon:before, .unsnow-job-item .button.icon:before, .unsnow-job-item .button.icon-left:before, 
+.unsnow-job-item .button.icon-right:before
+{
+    font-size: 20px;
+    line-height: 32px;
+}
+
+/***Override classes**/
+.bar .title.title-left
+{
+    text-align: center;
+}
+
+.bar.bar-stable
+{
+    background-color: #fff !important;
+    border-color: #e9e9e9  !important;
+    box-shadow: 2px 2px 1px -2px #919497;
+}
+
+.bar.bar-dark
+{
+    background-color: #1f242d;
+}
+
+.scroll-content
+{
+    background-color: #f0f0f0;
+}
+
+input, button, select, textarea
+{
+    font-family: 'Montserrat-Light';
+}
+
+.button.button-dark
+{
+    font-family: 'Montserrat-SemiBold';
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4083b6 !important;
+    border-color: #4083b6 !important;
+    line-height: 47px;
+}
+
+.button.button-dark.active, .button.button-dark.activated {
+      border-color: #3A77A5 !important;
+      background-color: #3A77A5 !important;
+      box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1) !important; 
+}
+
+.button.button-positive
+{
+    font-family: 'Montserrat-SemiBold';
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #fff;
+    background-color: #24b5c6 !important;
+    border-color: #24b5c6 !important;
+    line-height: 47px;
+}
+
+.button.button-positive.active, .button.button-positive.activated {
+      border-color: #0099ab  !important;
+      background-color: #0099ab !important;
+      box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1) !important; 
+}
+
+.checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
+    background: #4083b6;
+    border-color: #4083b6;
+}
+
+.checkbox input:before, .checkbox-icon:before {
+    border-width: 2px;
+    color: #898989;
+}
+
+.checkbox input, .checkbox-icon
+{
+    width: 24px;
+    height: 24px;
+}
+
+.checkbox input:after, .checkbox-icon:after {
+    top: 31%;
+    left: 21%;
+    border-width: 2px;
+}
+
+.bar.bar-stable h1
+{
+    font-family: 'Montserrat-SemiBold';
+    text-transform: uppercase;
+    color: #000000 !important;
+    font-size: 14px !important;
+}
+
+.bar.bar-stable h1 img
+{
+    height: 24px;
+    background-size: contain;
+    left: 0;
+    position: absolute;
+    margin-top: 10px;
+}
+
+.spinner svg {
+  width: 40px;
+  height: 40px;
+  stroke: #fff;
+  fill: #fff;
+}
+
+.popup-title
+{
+    font-family: 'Montserrat-SemiBold';
+    text-transform: uppercase;
+    color: #ffffff !important;
+}
+
+.popup-head
+{
+    padding: 10px 10px;
+    background-color: #1f242d;
+    color: #ffffff;
+    border-bottom: 1px solid #1f242d;
+}
+
+.popup-body
+{
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+.popup-buttons .button
+{
+    width: 95%;
+    height: 37px;
+    min-height: 37px;
+    text-transform: none !important;
+    line-height: 35px;
+}
+
+.popup-buttons
+{
+    min-height: 55px;
+}
+
+.popup-body span
+{
+    display: block;
+    padding: 10px;
+    font-family: 'Lato-Regular';
+}
+
+.popup-body .ionic_ratings span
+{
+    display: inline;
+}
+.ionic_ratings 
+{
+    padding-bottom: 10px;
+}
+.ionic_ratings .icon {
+    font-size: 24px;
+}
+
+.item-toggle
+{
+    font-family: 'Montserrat-Light';
+}
+
+.tabs-dark > .tabs, .tabs.tabs-dark {
+    border-color: #1f242d;
+    background-color: #1f242d !important;
+}
+
+.tabs-striped.tabs-dark .tab-item.tab-item-active, .tabs-striped.tabs-dark .tab-item.active, .tabs-striped.tabs-dark .tab-item.activated
+{
+    border-color: #1f242d !important;
+}
+
+/***Override classes End **/
+
+.unsnow-menu
+{
+    background-color: #2d2d2d;
+    background-image: url('../img/login_bg.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.85;
+}
+
+.unsnow-menu .unsnow-title
+{
+    padding-top: 10px;
+    padding-bottom: 50px;
+    height: 50px;
+}
+
+.unsnow-menu .unsnow-title .img
+{
+    height: 36px;
+}
+
+.unsnow-menu .item-complex, .unsnow-menu .item-complex .item-content, .unsnow-menu .inner-menu
+{
+    background-color: #2d2d2d;
+    color: #ffffff;
+    border: none;
+    font-family: 'Lato-Regular';
+    background: transparent;
+}
+
+.unsnow-subheader-space
+{
+    margin-top: 10px;
+}
+
+.unsnow-content-container
+{
+    height: 100%;
+    background-color: #fff;
+    border-color: #e9e9e9 !important;
+    box-shadow: 2px 2px 1px 2px #919497;
+}
+
+.unsnow-me
+{
+    font-weight: bold;
+    text-align: center;
+}
+
+.unsnow-tabs-top .tabs
+{
+    top: 0 !important;
+}
+
+.input-label
+{
+    font-size: 14px;
+    font-family: 'Montserrat-Light';
+}
+
+.card-grey{
+    background: #f8f8f8;
+}
+
+.tabs .tab-item {
+    font-size: 11px !important;
+}
+
+.unsnow-date:before{ content: attr(placeholder); width:100%; color:#AAA; } 
+.unsnow-date:focus:before,
+.unsnow-date.not_empty:before{ content:none }
+
+.popup-container .popup {
+    width: 80%
+}
+
+.unsnow-job .icon:before
+{
+    width: 20px;
+}
+
+#dd:before{ content: attr(placeholder); width:100%; color:#AAA; } 
+#dd:focus:before,
+#dd.not_empty:before{ content:none }
+
+.item 
+{
+    font-size: 14px;
+}
+
+#register .item-checkbox .checkbox {
+    right: auto !important;
+}
+
+#register .item-checkbox .checkbox{
+    z-index: -1 !important;
+}
+
+
+/*Solution for the Directive*/
+#register .item-content.disable-pointer-events{
+    pointer-events: initial !important
+}
+
+#map
+{
+    height: 200px;
+    width: 100%;
+}
+
+.cars
+{
+    margin-top: 10px; 
+    margin-bottom: 10px;
+}
+
+.cars .row .col, .cars h3
+{
+    font-size: 12px;
+}
+
+.add-job-select
+{
+    -moz-appearance: none !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    position: absolute !important;
+    top: 0px !important;
+    bottom: 0px !important;
+    right: 0 !important;
+    padding: 0px 45px 0px 10px !important;
+    max-width: 100% !important;
+    background: #FFF none repeat scroll 0% 0% !important;
+    color: #898989 !important;
+    text-indent: 0.01px !important;
+    text-overflow: "" !important;
+    white-space: nowrap !important;
+    font-size: 14px !important;
+    cursor: pointer !important;
+    direction: ltr !important;
+    left: 0;
+}
+
+.add-job-input
+{
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    position: absolute !important;
+    top: 0px !important;
+    bottom: 0px !important;
+    right: 0 !important;
+    max-width: 100% !important;
+    background: #FFF none repeat scroll 0% 0% !important;
+    color: #898989 !important;
+    white-space: nowrap !important;
+    font-size: 14px !important;
+    cursor: pointer !important;
+    left: 0;
+    padding-left: 10px !important;
+    height: 100% !important;
+}
+
+.unsnow-form .selected-item
+{
+    color: #4083b6 !important;
+    font-family: 'Montserrat-Regular';
+}
+
+.unsnow-form .unselected-item
+{
+    color: #898989;
+    font-family: 'Montserrat-Regular';
+}
+
+.unsnow-form .select-item-bg-color
+{
+    background-color: #f0f0f0;
+    width: auto;
+    -webkit-animation: bounceIn 1s;
+    animation: bounceIn 1s;
+}
+
+.unsnow-form .select-item-bg-color.ng-hide, .unsnow-form .select-item-bg-color.ng-leave {
+    -webkit-animation: bounceOut 1s;
+    animation: bounceOut 1s;
+}
+
+.border-left-none
+{
+    border-left-width: 0 !important;
+}
+
+.border-right-none
+{
+    border-right-width: 0 !important;
+}
+
+.border-top-none
+{
+    border-top-width: 0 !important;
+}
+
+.border-bottom-none
+{
+    border-bottom-width: 0 !important;
+}
+
+.unsnow-form
+{
+    margin-bottom: 0px;
+}
+
+.unsnow-form .item-checkbox .checkbox
+{
+    padding-left: 0;
+    margin-top: -19px;
+}
+
+.unsnow-form .item-checkbox {
+    padding-left: 45px;
+}
+
+.unsnow-form .no-border
+{
+    border-top-width: 0 !important;
+    border-bottom-width: 0 !important;
+    border-right-width: 0 !important;
+    border-left-width: 0 !important;
+    margin: 0;
+}
+
+.unsnow-form .border-bottom
+{
+    border-bottom-color: #ddd;
+    border-bottom-width: 1px !important;
+    border-bottom-style: solid;
+}
+
+.unsnow-form .item-2
+{
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.add-form-item
+{
+    margin: 10px;
+    margin-bottom: 3px;
+    font-family: 'Montserrat-Regular';
+    color: #898989;
+}
+
+.add-form-seperator
+{
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    border-bottom-color: #ddd;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+.add-form-item-no-border
+{
+    margin: 10px;
+}
+
+.add-form-static-bold
+{
+    font-size: 14px !important;
+    font-family: 'Lato-Bold' !important;
+    color: #000000;
+}
+
+.add-form-static-normal
+{
+    font-size: 14px !important;
+    font-family: 'Lato-Regular' !important;
+    color: #000000;
+}
+
+.unsnow-job-item .awarded .bold
+{
+    font-family: 'Lato-Bold' !important;
+}
+
+.unsnow-job-item .awarded .normal
+{
+    font-family: 'Lato-Regular' !important;
+    font-weight: normal;
+}
+
+/** Login Page **/
+
+.login 
+{
+    background-image: url("../img/login_bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login .login-top
+{
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+/*.login .login-top.ng-enter {
+    transition: 4s ease-in all;
+    opacity: 0;
+}
+
+.login .login-top.ng-enter-active {
+    opacity: 1;
+}*/
+
+.login .main
+{
+    /*bottom: 0;
+    position: fixed;*/
+    width: 100%;
+    font-family: 'Montserrat-Regular';
+}
+
+/*.login .main.ng-enter {
+    transition: 6s ease-in all;
+    opacity: 0;
+}
+
+.login .main.ng-enter-active {
+    opacity: 1;
+}*/
+
+.login .text-field
+{
+    font-family: 'Montserrat-Light';
+    font-size: 16px;
+    color: #fff;
+    padding-top: 5px !important;
+}
+
+.login .placeholder-icon
+{
+    color: #4083b6 !important;
+}
+
+.login .list-inset
+{
+    background-color: transparent;
+    margin-bottom: 10px;
+}
+
+.login .list .item
+{
+    background-color: transparent;
+    border: 0;
+    border-bottom: solid 1px #919497;
+    padding-left: 0;
+    border-radius: 0;
+}
+
+.login .placeholder-icon:first-child
+{
+    padding-right: 25px;
+    font-size: 24px;
+}
+
+.login input::-webkit-input-placeholder {
+    color: #fff;
+}
+
+.login .forgot-password
+{
+    text-align: right;
+    padding-top: 0;
+    color: #919497;
+}
+
+.login .forgot-password a, .login .forgot-password a:visited
+{
+    color: #919497;
+    font-family: 'Lato-Regular';
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.login .button
+{
+    font-family: 'Montserrat-Regular';
+    font-size: 18px;
+    color: #fff;
+    background-color: #4083b6 !important;
+    border-color: #4083b6 !important;
+    margin-bottom: 5px;
+    min-height: 55px;
+    line-height: 50px;
+}
+
+.login .transparent-btn
+{
+    background-color: transparent !important;
+    border-color: #919497 !important;
+    border-radius: 3px;
+    min-height: 47px;
+    line-height: 42px;
+}
+
+.login .button.button-dark.active, .login .button.button-dark.activated {
+      border-color: #3A77A5 !important;
+      background-color: #3A77A5 !important;
+      box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1) !important; 
+}
+
+.login .button.button-positive.active, .login .button.button-positive.activated {
+      border-color: #919497 !important;
+      background-color: #919497 !important;
+      box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1) !important; 
+}
+
+.login .scroll-content
+{
+    background-color: transparent;
+}
+
+/*** Manage my jobs ***/
+
+.manage-my-jobs .bottom-buttons
+{
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
+.manage-my-jobs .bottom-buttons .btn-container
+{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-top-color: #ddd;
+    border-top-width: 1px;
+    border-top-style: solid;  
+    -webkit-animation: fadeInUp 1s;
+    animation: fadeInUp 1s;
+    
+}
+.manage-my-jobs .top-container .headline1
+{
+    font-family: 'Montserrat-SemiBold';
+    color: #585858;
+    text-align: center;
+    font-size: 22px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.manage-my-jobs .top-container .headline2
+{
+    font-family: 'Montserrat-Regular';
+    color: #4083b6;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    border-bottom-color: #4083b6 !important;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    margin-bottom: 15px;
+}
+
+.manage-my-jobs .top-container .headline3
+{
+    font-family: 'Montserrat-Regular';
+    color: #585858;
+    text-align: center;
+    font-size: 13px;
+}
+
+.manage-my-jobs .top-container .headline3 .bold
+{
+    /*font-style: italic; 
+    color: #4083b6;*/
+}
+
+
+.manage-my-jobs .top-container .img
+{
+    /**width: 140px;**/
+    vertical-align: middle;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+}
+
+/*******  Home Page ******/
+
+.home .button
+{
+    text-transform: none;
+    font-size: 17px;
+}
+
+.home
+{
+    background-color: #ffffff;
+    height: 100%;
+}
+
+.home .container
+{
+    height: 50%;
+    position: relative;
+    width: 100%;
+}
+
+.home .container-unsnowme
+{
+    background: url("../img/unsnow-me-icon.png") no-repeat center;
+    background-size: 120px;
+    -webkit-animation: fadeInDown 1s;
+    animation: fadeInDown 1s;
+    background-position-y: center;
+}
+
+
+.home .container-unsnowyou
+{
+    background: url("../img/unsnow-you-icon.png") no-repeat center;
+    background-size: 120px;
+    border-top-color: #D0D0D0 !important;
+    border-top-width: 1px;
+    border-top-style: solid;
+    -webkit-animation: fadeInUp 1s;
+    animation: fadeInUp 1s;
+    background-position-y: center;
+}
+
+.home .container .btn-container
+{
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.home .container img
+{
+    width: 140px;
+    vertical-align: middle;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+}
+
+/*** find jobs - unsnow you ***/
+
+.unsnow-you .bottom-buttons
+{
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
+.unsnow-you .bottom-buttons .btn-container
+{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-top-color: #ddd;
+    border-top-width: 1px;
+    border-top-style: solid;  
+    -webkit-animation: fadeInUp 1s;
+    animation: fadeInUp 1s;
+}
+.unsnow-you .top-container .headline1
+{
+    font-family: 'Montserrat-SemiBold';
+    color: #585858;
+    text-align: center;
+    font-size: 22px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.unsnow-you .top-container .headline2
+{
+    font-family: 'Montserrat-Regular';
+    color: #4083b6;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    border-bottom-color: #4083b6 !important;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    margin-bottom: 15px;
+}
+
+.unsnow-you .top-container .headline3
+{
+    font-family: 'Montserrat-Regular';
+    color: #585858;
+    text-align: center;
+    font-size: 13px;
+}
+
+.unsnow-you .top-container .headline3 .bold
+{
+    /*font-style: italic; 
+    color: #4083b6;*/
+}
+
+.unsnow-you .top-container .img
+{
+    /*width: 140px;*/
+    vertical-align: middle;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+}
+
+/******* Add Job Step1  ******/
+.add-job-step1
+{
+    background-color: #ffffff;
+    height: 100%;
+}
+
+.add-job-step1 .map
+{
+    border-top-color: #ddd;
+    border-top-width: 1px;
+    border-top-style: solid;  
+}
+
+.add-job-step1 .note1
+{
+    padding-bottom: 5px;
+    padding-top: 10px;
+    font-size: 11px;
+}
+
+.add-job-step1 .note1 .bold
+{
+    font-family: 'Lato-Bold';
+}
+
+.add-job-step1 .note2
+{
+    padding-bottom: 10px;
+    padding-top: 5px;
+    font-family: 'Lato-Bold';
+}
+
+/******* Add Job Step2  ******/
+.add-job-step2
+{
+    background-color: #ffffff;
+    height: 100%;
+}
+
+/*********** Animation **********/
+/** Job Item **/
+.unsnow-job-item.ng-enter {
+    -webkit-animation: fadeInLeft 1s;
+    animation: fadeInLeft 1s;
+}
+
+.unsnow-job-item.ng-leave {
+    -webkit-animation: fadeOutLeft 1s;
+    animation: fadeOutLeft 1s;
+}
+
+.unsnow-job-item.ng-enter-stagger {
+  -webkit-animation-delay:200ms;
+  animation-delay:200ms;
+
+  /* override to make sure it's not inherited from other styles */
+  -webkit-animation-duration:0;
+  animation-duration:0;
+}
+
+.unsnow-job-item.ng-leave-stagger {
+  -webkit-animation-delay:200ms;
+  animation-delay:200ms;
+
+  /* override to make sure it's not inherited from other styles */
+  -webkit-animation-duration:0;
+  animation-duration:0;
+}
+
+/*** my bids **/
+.my-bids .unsnow-job-item .button
+{
+    width: 100%;
+}
+
+.my-bids .col1
+{
+    font-family: 'Montserrat-SemiBold';
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    color: #4083b6;
+}
+
+.my-bids .col2
+{
+    font-family: 'Montserrat-Light';
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    font-size: 13px;
+}
+
+/** Job Detail**/
+
+.job-detail .row-grey-border-right
+{
+    border-right-color: #f0f0f0;
+    border-right-width: 1px !important;
+    border-right-style: solid;
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    margin-top: 0;
+    margin-left: -15px;
+    padding-left: 15px !important;
+}
+
+.job-detail .row-grey
+{
+    background-color: #f0f0f0;
+}
+
+.job-detail .item-grey
+{
+    color: #898989;
+    font-family: 'Montserrat-Regular';
+}
+
+.job-detail .item-black-small
+{
+    color: #000000;
+    font-family: 'Montserrat-Regular';
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+.job-detail .button
+{
+    width: 100%;
+}
+
+.job-detail .car .grey
+{
+    color: #898989;
+    font-family: 'Montserrat-Regular';
+    padding-top: 1px;
+    margin-top: 0;
+}
+
+.job-detail .car .black
+{
+    color: #000000;
+    font-family: 'Montserrat-Regular';
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-top: 0;
+}
+
+.has-errors {
+    border-bottom: 3px solid #B83E2C;
+}
+
+.has-errors-last {
+    border-bottom: 2px solid #B83E2C;
+}
+
+.unsnow-form .has-errors 
+{
+    border-bottom: 2px solid #B83E2C !important;
+}
+
+.no-errors {
+    /**border-bottom: 3px solid green;**/
+}
+
+.add-job-step2 .button.button-dark
+{
+    text-transform: none !important;
+}
+
+.generic-container
+{
+    background-color: #ffffff;
+    /*height: 100%;*/
+    border-color: #e9e9e9 !important;
+    box-shadow: 2px 2px 1px -2px #919497;
+}
+
+.button.button-dark.timePickerArrows
+{
+    background: 0 0 !important;
+    border-color: transparent !important;
+    background-color: rgba(0,0,0,0) !important;
+    padding-bottom: 0;
+    padding-top: 0;
+    line-height: 26px !important;
+}
+
+.rem-bottom-padding-rating .ionic_ratings
+{
+    padding-bottom: 0;
+    text-align: right;
+    padding-right: 16px;
+}

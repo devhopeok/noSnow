@@ -1,0 +1,51 @@
+<ion-view view-title="<div class='unsnow-title'>unSnow.me<img src='img/header_logo.png' class='img'></div>">
+    
+    <ion-header-bar class="bar bar-stable bar-subheader">
+        <h1 class="title">Update Information</h1>
+    </ion-header-bar>
+    
+    <ion-nav-buttons side="left">
+        
+    </ion-nav-buttons>
+
+    <ion-content scroll="false">
+        
+        
+        <form name="registrationForm" novalidate="" ng-submit="updateAccountInformation(registrationForm)"> 
+            <div id="register" class="list unsnow-subheader-space">
+
+                <label class="item item-input" ng-class="{ 'has-errors' : registrationForm.zipCode.$invalid && registrationForm.$submitted, 'no-errors' : registrationForm.zipCode.$valid}">
+                    <input type="text" name="zipCode" placeholder="* Zip Code" ng-model="user.zipCode" ng-required="true">
+                </label>
+
+                <label class="item item-input item-select" ng-class="{ 'has-errors' : registrationForm.accountType.$invalid && registrationForm.$submitted, 'no-errors' : registrationForm.accountType.$valid}">
+                    <div class="input-label">
+                        * Account Type
+                    </div>
+                    <select ng-model="user.accountType" name="accountType" ng-required="true">
+                        <option value="">Select</option>
+                        <option value="post">Post Job</option>
+                        <option value="bid">Bid on Jobs</option>
+                    </select>
+                </label>
+
+                <li class="item item-checkbox" style="font-family: 'Montserrat-Light'" ng-class="{ 'has-errors-last' : registrationForm.terms.$invalid && registrationForm.$submitted, 'no-errors' : registrationForm.terms.$valid}">
+                    <label class="checkbox">
+                        <input type="checkbox" ng-model="user.terms" name="terms" ng-required="true">
+                    </label>
+                    I agree to unSnow.me <a href="#" stop-event ng-click="openTermsAndConditions()">Terms and Conditions.</a>
+                </li>
+
+            </div>
+            
+            <div class="padding">
+                <button class="button button-block button-dark" type="submit">
+                    Update
+                </button>
+            </div>
+        </form>
+
+    </ion-content>
+
+
+  </ion-view>

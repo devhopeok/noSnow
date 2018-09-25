@@ -1,0 +1,67 @@
+<div class="list card" ng-class="">
+
+    <div class="item card-grey unsnow-job">
+        <h3 class="icon-left"><i class="icon ion-android-document" style="width: 30px"></i> Job Id: {{job.attributes.unsnow_job_id}}</h3>
+        <h3><i class="icon ion-gear-a"></i> Job Status: {{job.attributes.job_status}}</h3>
+        <p><i class="icon ion-android-calendar"></i> Posted Date: {{job.attributes.createdAt | date:'MMMM  dd, yyyy'}}</p>
+        <p><i class="icon ion-social-usd"></i> Budget: ${{job.attributes.job_budget}}</p>
+        <h3 ng-show="$parent.userBidded(job)" style="color: green">You Have Bid</h3>
+        <h3 ng-show="$parent.userNotBidded(job)" style="color: orange">You Have Not Bidded</h3>
+        <h3 ng-show="$parent.isOwner(job)" style="color: red">You are the owner of this Job.</h3>
+    </div>
+
+    <div class="item item-body">
+        <p>
+            <span style="display: block; font-weight: bold">Address Information</span>
+            <span style="display: block">{{job.attributes.city}}, {{job.attributes.zip}}</span>
+            <!--<span style="display: block">{{job.attributes.address}}, {{job.attributes.city}}, {{job.attributes.state}}, {{job.attributes.zip}}</span>-->
+            
+            <span ng-show="{{job.attributes.drive_way}}" style="display: block; margin-top: 10px; width: 50%; float: left">
+                <span style="font-weight: bold">Drive Way</span> <br />
+                Length : {{job.attributes.drive_way_length}} Feet<br />
+                Width : {{job.attributes.drive_way_width}} Feet<br />
+            </span>
+            
+            <span ng-show="{{job.attributes.side_walk}}" style="display: block; margin-top: 10px; width: 50%; float: left">
+                <span style="font-weight: bold">Side Walk</span> <br />
+                Length : {{job.attributes.side_walk_length}} Feet<br />
+                Width : {{job.attributes.side_walk_width}} Feet<br />
+            </span>
+            
+            <span ng-show="{{job.attributes.walk_way}}" style="display: block; margin-top: 10px; width: 50%; float: left">
+                <span style="font-weight: bold">Walk Way</span> <br />
+                Length : {{job.attributes.walk_way_length}} Feet<br />
+                Width : {{job.attributes.walk_way_width}} Feet<br />
+            </span>
+            
+            <span ng-show="{{job.attributes.steps}}" style="display: block; margin-top: 10px; width: 50%; float: left">
+                <span style="font-weight: bold">Steps</span> <br />
+                Length : {{job.attributes.steps_amount}} Feet<br />
+                Width : {{job.attributes.steps_width}} Feet<br />
+            </span>
+            
+            <span ng-show="{{job.attributes.car}}" style="display: block; margin-top: 10px; width: 100%; float: left">
+                <span style="font-weight: bold">Clean Cars: Yes</span>
+            </span>
+        </p>
+    </div>
+    
+    <div class="item tabs tabs-secondary tabs-icon-left">
+        <a class="tab-item" ng-click="$parent.viewJobDetails(job)">
+          <i class="icon ion-android-document"></i>
+            View Job Details
+        </a>
+        
+        <a class="tab-item" ng-click="$parent.viewBids(job)" ng-show="$parent.isOwner(job)">
+            <i class="icon ion-social-usd"></i>
+            View Bids
+        </a>
+        
+        
+        <a class="tab-item" ng-click="$parent.showBidPopup(job)" ng-show="$parent.userNotBidded(job)">
+            <i class="icon ion-social-usd"></i>
+            Bid Now
+        </a>
+    </div>
+
+</div>

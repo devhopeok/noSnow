@@ -1,0 +1,236 @@
+<ion-view view-title="<div class='unsnow-title'>unSnow.me<img src='img/header_logo.png' class='img'></div>">
+    
+    <ion-header-bar class="bar bar-stable bar-subheader" hide-on-scroll="true">
+        <h1 class="title">Add Job</h1>
+    </ion-header-bar>
+    
+    <ion-content class="has-header">
+        
+        <form name="addJobForm" novalidate="" ng-submit="saveJob(addJobForm)"> 
+            <div class="add-job-step2 unsnow-subheader-space">
+
+                <div class="list unsnow-form">
+                    <div class="add-form-item">
+                        <span class="add-form-static-bold">Selected Address:</span><br/> <span ng-bind-html="serviceAddJob.address.addressLine"></span>
+                    </div>
+                    <div class="add-form-seperator"></div>
+
+                    <div class="add-form-item add-form-static-bold">
+                        unSnow:
+                    </div>
+
+                    <!--Driveway-->
+                    <div class="item item-checkbox no-border item-2" ng-class="{'select-item-bg-color': job.driveWay}">
+                        <label class="checkbox">
+                            <input type="checkbox" ng-model="job.driveWay">
+                        </label>
+                        <h3 ng-class="{'selected-item': job.driveWay, 'unselected-item': job.driveWay == false || job.driveWay == undefined}">Driveway</h3>
+
+                    </div>
+                    <div class="item row no-border border-bottom select-item-bg-color" ng-show="job.driveWay">
+                        <div class="col no-padding">
+                            <label class="item item-select" ng-class="{ 'has-errors' : addJobForm.driveWay_Length.$invalid && addJobForm.$submitted, 'no-errors' : addJobForm.driveWay_Length.$valid}">
+                                <select name="driveWay_Length" class="add-job-select" ng-model="job.driveWay_Length" ng-options="item as $parent.concatFeet(item) for item in serviceAddJob.count500" ng-required="job.driveWay">
+                                    <option value="">Length</option>
+
+                                </select>
+                            </label>
+                        </div>
+                        <div class="col no-padding">
+                            <label class="item item-select" ng-class="{ 'has-errors' : addJobForm.driveWay_Width.$invalid && addJobForm.$submitted, 'no-errors' : addJobForm.driveWay_Width.$valid}">
+                                <select name="driveWay_Width" class="add-job-select" ng-model="job.driveWay_Width" ng-options="item as $parent.concatFeet(item) for item in serviceAddJob.count500" ng-required="job.driveWay">
+                                    <option value="">Width</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!--Walkway-->
+                    <div class="item item-checkbox no-border" ng-class="{'select-item-bg-color': job.walkWay}">
+                        <label class="checkbox">
+                            <input type="checkbox" ng-model="job.walkWay">
+                        </label>
+                        <h3 ng-class="{'selected-item': job.walkWay, 'unselected-item': job.walkWay == false || job.walkWay == undefined}">Walkway</h3>
+                    </div>
+                    <div class="item row no-border border-bottom select-item-bg-color" ng-show="job.walkWay">
+                        <div class="col no-padding">
+                            <label class="item item-select" ng-class="{ 'has-errors' : addJobForm.walkWay_Length.$invalid && addJobForm.$submitted, 'no-errors' : addJobForm.walkWay_Length.$valid}">
+                                <select name="walkWay_Length" class="add-job-select" ng-model="job.walkWay_Length" ng-options="item as $parent.concatFeet(item) for item in serviceAddJob.count500" ng-required="job.walkWay">
+                                    <option value="">Length</option>
+
+                                </select>
+                            </label>
+                        </div>
+                        <div class="col no-padding">
+                            <label class="item item-select" ng-class="{ 'has-errors' : addJobForm.walkWay_Width.$invalid && addJobForm.$submitted, 'no-errors' : addJobForm.walkWay_Width.$valid}">
+                                <select name="walkWay_Width" class="add-job-select" ng-model="job.walkWay_Width" ng-options="item as $parent.concatFeet(item) for item in serviceAddJob.count500" ng-required="job.walkWay">
+                                    <option value="">Width</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!--SideWalk-->
+                    <div class="item item-checkbox no-border" ng-class="{'select-item-bg-color': job.sideWalk}">
+                        <label class="checkbox">
+                            <input type="checkbox" ng-model="job.sideWalk">
+                        </label>
+                        <h3 ng-class="{'selected-item': job.sideWalk, 'unselected-item': job.sideWalk == false || job.sideWalk == undefined}">Side Walk</h3>
+                    </div>
+                    <div class="item row no-border border-bottom select-item-bg-color" ng-show="job.sideWalk">
+                        <div class="col no-padding">
+                            <label class="item item-select" ng-class="{ 'has-errors' : addJobForm.sideWalk_Length.$invalid && addJobForm.$submitted, 'no-errors' : addJobForm.sideWalk_Length.$valid}">
+                                <select name="sideWalk_Length" class="add-job-select" ng-model="job.sideWalk_Length" ng-options="item as $parent.concatFeet(item) for item in serviceAddJob.count500" ng-required="job.sideWalk">
+                                    <option value="">Length</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="col no-padding">
+                            <label class="item item-select" ng-class="{ 'has-errors' : addJobForm.sideWalk_Width.$invalid && addJobForm.$submitted, 'no-errors' : addJobForm.sideWalk_Width.$valid}">
+                                <select name="sideWalk_Width" class="add-job-select" ng-model="job.sideWalk_Width" ng-options="item as $parent.concatFeet(item) for item in serviceAddJob.count500" ng-required="job.sideWalk">
+                                    <option value="">Width</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!--Steps-->
+                    <div class="item item-checkbox no-border" ng-class="{'select-item-bg-color': job.steps}">
+                        <label class="checkbox">
+                            <input type="checkbox" ng-model="job.steps">
+                        </label>
+                        <h3 ng-class="{'selected-item': job.steps, 'unselected-item': job.steps == false || job.steps == undefined}">Steps</h3>
+                    </div>
+                    <div class="item row no-border border-bottom select-item-bg-color" ng-show="job.steps">
+                        <div class="col no-padding">
+                            <label class="item item-select" ng-class="{ 'has-errors' : addJobForm.steps_Width.$invalid && addJobForm.$submitted, 'no-errors' : addJobForm.steps_Width.$valid}">
+                                <select name="steps_Width" class="add-job-select" ng-model="job.steps_Width" ng-options="item as $parent.concatFeet(item) for item in serviceAddJob.count20" ng-required="job.steps">
+                                    <option value="">Width</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="col no-padding">
+                            <label class="item item-select" ng-class="{ 'has-errors' : addJobForm.steps_Amount.$invalid && addJobForm.$submitted, 'no-errors' : addJobForm.steps_Amount.$valid}">
+                                <select name="steps_Amount" class="add-job-select" ng-model="job.steps_Amount" ng-options="item as $parent.concatStep(item) for item in serviceAddJob.count20" ng-required="job.steps">
+                                    <option value="">How Many Steps</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!--Clean Cars-->
+                    <div class="item item-checkbox no-border" ng-class="{'select-item-bg-color': job.cleanCars}">
+                        <label class="checkbox">
+                            <input type="checkbox" ng-model="job.cleanCars" ng-change="manageCars(job.cleanCars)">
+                        </label>
+                        <h3 ng-class="{'selected-item': job.cleanCars, 'unselected-item': job.cleanCars == false || job.cleanCars == undefined}">Clean Car(s)</h3>
+                    </div>
+                    <div class="item row no-border select-item-bg-color" ng-show="job.cleanCars">
+                        <div class="col no-padding">
+                            <label class="item item-select" ng-class="{ 'has-errors' : addJobForm.cars.$invalid && addJobForm.$submitted, 'no-errors' : addJobForm.cars.$valid}">
+                                <select name="cars" class="add-job-select" ng-model="job.cars" ng-change="serviceAddJob.carNumberChange(job.cars)" ng-options="item as item for item in serviceAddJob.count20" ng-required="job.cleanCars">
+                                    <option value="">How Many Cars?</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="select-item-bg-color no-border border-bottom" ng-show="serviceAddJob.cars.length > 0">
+                        <div class="padding row header item select-item-bg-color">
+                            <h3>Vehicle Info:</h3>
+                        </div>
+                        <div class="row header item select-item-bg-color">
+
+                            <div class="col col-20">
+                                <h3>Location</h3>
+                            </div>
+                            <div class="col col-20">
+                                <h3>Plate</h3>
+                            </div>
+                            <div class="col col-20 price-align">
+                                 <h3>Type</h3>
+                            </div>
+                            <div class="col col-20 price-align">
+                                 <h3>Color</h3>
+                            </div>
+                            <div class="col col-20">
+                                 <h3>Digout</h3>
+                            </div>
+                        </div>
+
+                        <div class="row row-data item border-right-none" ng-repeat="car in serviceAddJob.cars" ng-click="showCarPopup(car)" style="font-size: 13px">
+                            <div class="col" ng-show="!car.carLocation" style="font-style: italic;">
+                                Tap to add vehicle data
+                            </div>
+
+                            <div class="col col-20" ng-show="car.carLocation">
+                                {{car.carLocation}}
+                            </div>
+                            <div class="col col-20" ng-show="car.carLocation">
+                                {{car.carLicensePlate}}
+                            </div>
+                            <div class="col col-20 price-align" ng-show="car.carLocation">
+                                {{car.carType}}
+                            </div>
+                            <div class="col col-20 price-align" ng-show="car.carLocation">
+                                {{car.carColor}}
+                            </div>
+                            <div class="col col-20" ng-show="car.carLocation">
+                                {{showYesNo(car.digout)}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-form-seperator"></div>
+
+
+                    <div class="item no-border"><h3 class="add-form-static-bold">When would you like this completed?</h3></div>
+                    <div class="item row no-border">
+                        <div class="col no-padding">
+                            <label class="item item-input" ng-class="{ 'has-errors' : addJobForm.completedDate.$invalid && addJobForm.$submitted, 'no-errors' : addJobForm.completedDate.$valid}">
+                                <input type="date" placeholder="Color" name="completedDate" ng-model="job.completedDate" class="add-job-input" ng-required="true">
+                                <i class="icon ion-android-calendar placeholder-icon item-icon-right"></i>
+                            </label>
+                        </div>
+                        <div class="col no-padding">
+                            <label class="item item-select" ng-class="{ 'has-errors' : addJobForm.budgetAmount.$invalid && addJobForm.$submitted, 'no-errors' : addJobForm.budgetAmount.$valid}">
+                                <select name="budgetAmount" class="add-job-select" ng-model="job.budgetAmount" ng-options="item as $parent.concatUSD(item) for item in serviceAddJob.count1000" ng-required="true">
+                                    <option value="">Budget</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="add-form-seperator"></div>
+
+                    <div class="item item-checkbox no-border" ng-class="{'select-item-bg-color': job.saveJob}">
+                        <label class="checkbox">
+                            <input type="checkbox" ng-model="job.saveJob">
+                        </label>
+                        <h3 class="add-form-static-bold">Do you want to save this job?</h3>
+                    </div>
+                    <label class="item item-input no-border" ng-show="job.saveJob" ng-class="{ 'has-errors' : addJobForm.jobName.$invalid && addJobForm.$submitted, 'no-errors' : addJobForm.jobName.$valid}">
+                        <input maxlength="64" name="jobName" type="text" placeholder="* Job Name" ng-model="job.jobName" ng-required="job.saveJob">
+                    </label>
+                    <div class="add-form-seperator"></div>
+                </div>
+
+<!--
+                <div class="padding" style="font-family: 'Lato-Regular';">
+                    <span class="add-form-static-bold">NOTE - </span> Job posting is free, However you will have to pay an acceptance fee of $1 to award the job to a user.
+                </div>
+                <div class="add-form-seperator"></div>
+-->
+
+                <div class="padding">
+                    <button class="button button-block button-dark" type="submit"><!--href="#/app/home"-->
+    <!--                    <span ng-show="job.saveJob == false">Post Job</span>-->
+                        <span>unSnow.me!</span>
+                    </button>
+                </div>
+
+            </div>
+        </form>
+
+    </ion-content>
+
+
+  </ion-view>

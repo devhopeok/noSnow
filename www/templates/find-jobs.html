@@ -1,0 +1,50 @@
+<ion-view view-title="<div class='unsnow-title'>unSnow.me<img src='img/header_logo.png' class='img'></div>">
+    
+    <ion-header-bar class="bar bar-stable bar-subheader">
+        <h1 class="title">Find Jobs</h1>
+    </ion-header-bar>
+    
+    <ion-content>
+        
+        <div class="generic-container unsnow-subheader-space">
+            <div class="list" style="margin-bottom: 0">
+                <div class="add-form-item">
+                    <span class="add-form-static-bold">Jobs Near Me</span>
+                </div>
+                <div class="add-form-seperator"></div>
+                <div class="padding unsnow-note">
+                    Search jobs within 3 miles of your current location
+                </div>
+            </div>
+            
+            <div class="padding">
+                <a class="button button-block button-dark icon-left ion-android-pin" ng-click="searchJobsNearMe()">
+                    Jobs Near Me
+                </a>
+            </div>
+        </div>
+        
+        <div class="generic-container unsnow-subheader-space">
+            <div class="list">
+                <div class="add-form-item">
+                    <span class="add-form-static-bold">Search by Zip Code</span>
+                </div>
+                <div class="add-form-seperator"></div>
+                
+                <label class="item item-input" style="padding-left: 10px; border-top: none; margin-top: 1px; border-bottom: none;">
+                    <input type="text" placeholder="Enter Zip Code" ng-model="ServiceFramework.jobSearchQuery" maxlength="24">
+                </label>
+                <div class="add-form-seperator"></div>
+            </div>
+
+            <div class="padding">
+                <a class="button button-block button-positive icon-left ion-search" ng-click="searchJobs()">
+                    Find Jobs
+                </a>
+            </div>
+        </div>
+        
+    </ion-content>
+
+
+  </ion-view>

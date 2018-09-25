@@ -1,0 +1,39 @@
+ <div class="list">
+    <div ng-show="selectedCar.error" style="padding-bottom: 10px; color: red;">All fields are required</div>        
+    <label class="item item-input item-select">
+        <div class="input-label">
+            Car Location
+        </div>
+        <select ng-model="selectedCar.carLocation">
+            <option value="">--Select--</option>
+            <option value="Driveway">Driveway</option>
+            <option value="Street">Street</option>
+        </select>
+    </label>
+    <label class="item item-input">
+        <input type="text" placeholder="Plate" ng-model="selectedCar.carLicensePlate">
+    </label>
+    <label class="item item-input item-select">
+        <div class="input-label">
+            Type
+        </div>
+        <select ng-model="selectedCar.carType">
+            <option value="">--Select--</option>
+            <option value="SUV">SUV</option>
+            <option value="Compact">Compact</option>
+            <option value="Sedan">Sedan</option>
+            <option value="Truck">Truck</option>
+        </select>
+    </label>
+    <label class="item item-input">
+        <input type="text" placeholder="Color" ng-model="selectedCar.carColor">
+    </label>
+     
+     <div class="item item-checkbox">
+        <label class="checkbox">
+            <input type="checkbox" ng-model="selectedCar.digout">
+        </label>
+        <h3>Digout</h3>
+    </div>
+
+</div>
